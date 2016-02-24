@@ -43,7 +43,7 @@ virtualenv --python=python2.7 env
 source env/bin/activate
 
 # First we have to install an old version of django-reversion, which is not in PyPI
-  pip install https://github.com/etianen/django-reversion/archive/release-1.3.3.zip
+pip install https://github.com/etianen/django-reversion/archive/release-1.3.3.zip
 
 # Then install all the requirements from the PyPI
 pip install -r requirements.txt
