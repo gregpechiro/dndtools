@@ -3,13 +3,12 @@ dndtools
 
 An open source Django-based wiki-like web application for DnD.
 
-Status
-------
-This github repository is currently a clone of a private repository. It contains ONLY source codes of the application, not its data.
+This is a fork of https://github.com/antoinealb/dndtools
 
-Also, this readme file is just an early preview to be updated as soon as someone have the time.
+I have modified the configuration to meet my needs. I have also edited the templates slightlty.
 
-If you find anything wrong, just start an issue.
+There is no database included in the repo. This version is setup to run MySql instead of Sqlite.
+
 
 Installation
 ------------
@@ -22,6 +21,15 @@ The only requirements are Python 2.7 and Virtualenv.
 To install DnDTools, run the following commands:
 
 ```sh
+# Install MySql and python libraries
+apt-get install git mysql-server python-dev python-mysqldb
+
+# Setup MySql database
+mysql -u root -pdndtools -e "create database dndtools;"
+mysql -u root -pdndtools -e "grant all on dndtools.* to 'dndtools'@'localhost' identified by 'dndtools';"
+
+# Import any dndtools MySql database that you like 
+
 # Clone the repository (my fork of DndTools)
 git clone https://github.com/gregpechiro/dndtools.git
 cd dndtools/
@@ -44,7 +52,7 @@ cd dndtools/
 cp local.py.sample local.py
 
 # Finally, run the development server.
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
 
 # Your own version of DnDTools is now available at http://127.0.0.1:8000
 ```
