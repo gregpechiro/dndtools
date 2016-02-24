@@ -1,15 +1,13 @@
 <div id="menus">
     <div id="menubar">
         <ul id="menu">
+            <li{% if request.menu_item == MenuItem.CONTACTS %} class="selected arrow"{% endif %}><a href="{% url index %}">Home</a></li>
             <li{% if request.menu_item == MenuItem.RULEBOOKS %} class="selected arrow"{% endif %} id="menu_{{ MenuItem.RULEBOOKS }}"><a href="{% url rulebook_list %}">Rulebooks</a></li>
             <li{% if request.menu_item == MenuItem.CHARACTER_OPTIONS %} class="selected arrow"{% endif %} id="menu_{{ MenuItem.CHARACTER_OPTIONS }}"><a href="{% url character_class_list %}">Character Options</a></li>
             <li{% if request.menu_item == MenuItem.MAGIC %} class="selected arrow"{% endif %} id="menu_{{ MenuItem.MAGIC }}"><a href="{% url spell_index %}">Magic</a></li>
             <li{% if request.menu_item == MenuItem.BESTIARY %} class="selected arrow"{% endif %} id="menu_{{ MenuItem.BESTIARY }}"><a href="{% url race_index %}">Bestiary</a></li>
             <li{% if request.menu_item == MenuItem.ITEMS %} class="selected arrow"{% endif %} id="menu_{{ MenuItem.ITEMS }}"><a href="{% url item_index %}">Items</a></li>
             <li{% if request.menu_item == MenuItem.ME %} class="selected arrow"{% endif %} id="menu_{{ MenuItem.ME }}"><span class="disabled" title="Not yet">My D&amp;D</span></li>
-            <li{% if request.menu_item == MenuItem.CONTACTS %} class="selected arrow"{% endif %} id="menu_{{ MenuItem.CONTACTS }}"><a href="{% url contact %}">Contacts</a></li>
-            <li class="android{% if request.menu_item == MenuItem.ANDROID %} selected arrow{% endif %}"><a
-                    href="{% url android %}">Android</a></li>
         </ul>
     </div>
     <div id="submenubar">
@@ -56,11 +54,6 @@
         <ul id="submenu_{{ MenuItem.ITEMS }}"{% if request.menu_item == MenuItem.ITEMS %} class="enabled"{% endif %}>
             <li{% if request.submenu_item == MenuItem.Items.MAGICAL %} class="selected"{% endif %}><a href="{% url item_index %}">Magical</a></li>
             <li{% if request.submenu_item == MenuItem.Items.MUNDANE_ALCHEMICAL %} class="selected"{% endif %}><span class="disabled" title="Not yet">Mundane / Alchemical</span></li>
-        </ul>
-        <ul id="submenu_{{ MenuItem.CONTACTS }}"{% if request.menu_item == MenuItem.CONTACTS %} class="enabled"{% endif %}>
-            <li{% if request.submenu_item == MenuItem.Contacts.CONTACT_US %} class="selected"{% endif %}><a href="{% url contact %}">Contact Us</a></li>
-            <li{% if request.submenu_item == MenuItem.Contacts.NEWS %} class="selected"{% endif %}><a href="{% url index %}">News</a></li>
-            <li{% if request.submenu_item == MenuItem.Contacts.STAFF %} class="selected"{% endif %}><a href="{% url staff %}">Staff</a></li>
         </ul>
     </div>
 </div>

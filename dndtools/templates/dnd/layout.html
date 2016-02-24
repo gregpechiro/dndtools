@@ -1,72 +1,54 @@
 {% load custom_tags %}<!DOCTYPE HTML>
 <html>
-<head>
-  <title>{% block title %}Home{% endblock %} &ndash; D&amp;D Tools</title>
-  <link href="{% media "favicon.ico" %}" rel="SHORTCUT ICON"/>
-  <meta name="description" content="Complete list of all D&amp;D spells, rulebooks, feats, classes and more!"/>
-  <meta name="keywords" content="D&amp;D, Spells, Feats, Classes"/>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-  <meta name="google-site-verification" content="T0e3C-V9mijfHz3l51TYGDuvtf14Oz7MWKTxtUbT8Gs" />
-  {% block extra_meta %}{% endblock %}
-  <link rel="stylesheet" type="text/css" href="{% media "css/style.css" %}" title="style"/>
-  <link rel="stylesheet" type="text/css" href="{% media "css/chosen.css" %}" title="style"/>
-  <script type="text/javascript" src="{% media "js/jquery-1.7.min.js" "no-timestamp" %}"></script>
-  <script type="text/javascript" src="{% media "js/jquery.cookie.js" "no-timestamp" %}"></script>
-  <script type="text/javascript" src="{% media "js/chosen.jquery.min.js" "no-timestamp" %}"></script>
-  {# google search engine #}
-  {% if not debug  %}
-  <link rel="stylesheet" href="//www.google.com/cse/style/look/default.css" type="text/css" />
-  {% block extra_link %}{% endblock %}
-  <script type="text/javascript">
+    <head>
+        <title>{% block title %}Home{% endblock %} &ndash; D&amp;D Tools</title>
+        <link href="{% media "favicon.ico" %}" rel="SHORTCUT ICON"/>
+        <meta name="description" content="Complete list of all D&amp;D spells, rulebooks, feats, classes and more!"/>
+        <meta name="keywords" content="D&amp;D, Spells, Feats, Classes"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="google-site-verification" content="T0e3C-V9mijfHz3l51TYGDuvtf14Oz7MWKTxtUbT8Gs" />
+        {% block extra_meta %}{% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% media "css/style.css" %}" title="style"/>
+        <link rel="stylesheet" type="text/css" href="{% media "css/chosen.css" %}" title="style"/>
+        <script type="text/javascript" src="{% media "js/jquery-1.7.min.js" "no-timestamp" %}"></script>
+        <script type="text/javascript" src="{% media "js/jquery.cookie.js" "no-timestamp" %}"></script>
+        <script type="text/javascript" src="{% media "js/chosen.jquery.min.js" "no-timestamp" %}"></script>
+        {# google search engine #}
+        {% if not debug  %}
+            <link rel="stylesheet" href="//www.google.com/cse/style/look/default.css" type="text/css" />
+            {% block extra_link %}{% endblock %}
+            <!--<script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-27000767-1']);
-    _gaq.push(['_trackPageview']);
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-27000767-1']);
+            _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-  {% endif %}
-  {% if not debug and not disable_social %}
-  <script type="text/javascript">
-      (function() {
-          var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-          s.type = 'text/javascript';
-          s.async = true;
-          s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-          t.parentNode.insertBefore(s, t);
-      })();
-  </script>
-  {% endif %}
-</head>
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+            </script>-->
+        {% endif %}
+    </head>
 
-<body>
-<div id="fb-root"></div>
-{% if not debug and not disable_social %}
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-{% endif %}
-{% comment %}<div class="flash">
-  Please check the home page, I've added some news. Thanks.
-</div>{% endcomment %}
-<div id="main">
-    <div id="header">
-        <div id="logo">
-            <div id="logo_text">
-                <h1>
-                    <a href="{% url index %}">D&amp;D<span class="logo_colour">tools</span></a>{% if unreadNewsCount %}<span id="counter" title="{{ unreadNewsCount }} unread news">{{ unreadNewsCount }}</span>{% endif %}
-                </h1>
-
-                <h2>Feats. Spells. Prestige Classes. And more!</h2>
+    <body>
+        <div id="fb-root"></div>
+        {% comment %}
+            <div class="flash">
+                Please check the home page, I've added some news. Thanks.
             </div>
+        {% endcomment %}
+        <div id="main">
+            <div id="header">
+                <div id="logo">
+                    <div id="logo_text">
+                        <h1>
+                            <a href="{% url index %}">D&amp;D<span class="logo_colour">tools</span></a>{% if unreadNewsCount %}<span id="counter" title="{{ unreadNewsCount }} unread news">{{ unreadNewsCount }}</span>{% endif %}
+                        </h1>
+
+                        <h2>Feats. Spells. Prestige Classes. And more!</h2>
+                    </div>
             {# Google search engine  #}
             {% if not debug %}
                 <div id="google-search-holder">
