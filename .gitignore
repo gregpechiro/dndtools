@@ -2,10 +2,6 @@
 ############
 .idea
 
-# Configuration #
-#################
-/dndtools/local.py
-
 # Virtual environment
 env
 

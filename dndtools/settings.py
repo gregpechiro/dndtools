@@ -91,4 +91,10 @@ INSTALLED_APPS = (
 
 SERVER_EMAIL = 'error@dndtools.eu'
 
+
 from local import *
+
+if DEBUG:
+    MEDIA_ROOT = os.path.join(DIRNAME, '/static')
+else:
+    MEDIA_ROOT = os.path.join(DIRNAME, 'static')

@@ -16,7 +16,9 @@ urlpatterns = patterns('',
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
          {'sitemaps': sitemaps}),
     (r'^', include('dndtools.dnd.urls')),
-                       )
+
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': settings.DEBUG}),
+)
 
 # For development server
 if settings.DEBUG:
