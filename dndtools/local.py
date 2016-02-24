@@ -26,6 +26,8 @@ SECRET_KEY = 'dndtools'
 
 MEDIA_ROOT = os.path.join(DIRNAME, 'static/')
 
+STATIC_ROOT = os.path.join(DIRNAME, 'static/')
+
 SITE_ID = 1
 
 INTERNAL_IPS = ('127.0.0.1', )
