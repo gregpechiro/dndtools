@@ -25,8 +25,8 @@ To install DnDTools, run the following commands:
 apt-get install git mysql-server python-dev python-mysqldb
 
 # Setup MySql database
-mysql -u root -pdndtools -e "create database dndtools;"
-mysql -u root -pdndtools -e "grant all on dndtools.* to 'dndtools'@'localhost' identified by 'dndtools';"
+mysql -uroot -proot -e "create database dndtools;"
+mysql -uroot -proot -e "grant all on dndtools.* to 'dndtools'@'localhost' identified by 'dndtools';"
 
 # Import any dndtools MySql database that you like 
 
