@@ -27,8 +27,9 @@ apt-get install git mysql-server python-dev python-mysqldb
 # Setup MySql database
 mysql -uroot -proot -e "create database dndtools;"
 mysql -uroot -proot -e "grant all on dndtools.* to 'dndtools'@'localhost' identified by 'dndtools';"
-
 # Import any dndtools MySql database that you like 
+mysql -uroot -proot dndtools < dndtools.sql
+
 
 # Clone the repository (my fork of DndTools)
 git clone https://github.com/gregpechiro/dndtools.git
