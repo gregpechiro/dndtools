@@ -22,7 +22,10 @@ To install DnDTools, run the following commands:
 
 ```sh
 # Install MySql and python libraries
-apt-get install git mysql-server python-dev python-mysqldb
+apt-get install mysql-server 
+apt-get install python-dev 
+apt-get install python-mysqldb
+apt-get install python-virtualenv
 
 # Setup MySql database
 mysql -uroot -proot -e "create database dndtools;"
@@ -40,7 +43,7 @@ virtualenv --python=python2.7 env
 source env/bin/activate
 
 # First we have to install an old version of django-reversion, which is not in PyPI
-pip install https://github.com/etianen/django-reversion/archive/release-1.3.3.zip
+  pip install https://github.com/etianen/django-reversion/archive/release-1.3.3.zip
 
 # Then install all the requirements from the PyPI
 pip install -r requirements.txt
